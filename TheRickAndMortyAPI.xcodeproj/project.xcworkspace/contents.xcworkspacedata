@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/aleksandr/Developer/The Rick and Morty API/TheRickAndMortyAPI.xcodeproj">
    </FileRef>
 </Workspace>
