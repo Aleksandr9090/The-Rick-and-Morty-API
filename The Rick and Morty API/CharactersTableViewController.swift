@@ -9,12 +9,15 @@ import UIKit
 
 class CharactersViewController: UITableViewController {
 
-    
     private var rickAndMorty: RickAndMorty?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let image = UIImage(named: "Pickle")
+        let imageView = UIImageView(image: image)
+        tableView.backgroundView = imageView
+        
         fetchData(from: Link.rickAndMortyApi.rawValue)
     }
 
@@ -25,13 +28,25 @@ class CharactersViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "character", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "character", for: indexPath) as! TableViewCell
         let character = rickAndMorty?.results[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = character?.name
+        cell.configure(with: character)
         
-        cell.contentConfiguration = content
         return cell
+    }
+    
+     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let characterVC = segue.destination as? CharacterViewController else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        characterVC.character = rickAndMorty?.results[indexPath.row]
+    }
+
+    @IBAction func updateData(_ sender: UIBarButtonItem) {
+        sender.tag == 1
+        ? fetchData(from: rickAndMorty?.info.next)
+        : fetchData(from: rickAndMorty?.info.prev)
     }
     
     
@@ -41,19 +56,17 @@ class CharactersViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
-
-  
-
     
-     
-     
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let characterVC = segue.destination as? CharacterViewController else { return }
-        guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        characterVC.character = rickAndMorty?.results[indexPath.row]
-    }
-
-
-
 }
+
+
+
+
+extension CharactersViewController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
+    }
+}
+
+
+

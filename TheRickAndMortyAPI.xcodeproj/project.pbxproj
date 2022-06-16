@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4CCDBE285B5CC6008C31AB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CCDBD285B5CC5008C31AB /* TableViewCell.swift */; };
 		1F7EEA9528562526000DDC23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EEA9428562526000DDC23 /* AppDelegate.swift */; };
 		1F7EEA9728562526000DDC23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EEA9628562526000DDC23 /* SceneDelegate.swift */; };
 		1F7EEA9C28562526000DDC23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7EEA9A28562526000DDC23 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F4CCDBD285B5CC5008C31AB /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1F7EEA9128562526000DDC23 /* TheRickAndMortyAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheRickAndMortyAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F7EEA9428562526000DDC23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F7EEA9628562526000DDC23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				1F7EEAAA28562D1D000DDC23 /* RickAndMorty.swift */,
 				1F7EEAAC2858CA2A000DDC23 /* CharacterViewController.swift */,
 				1F7EEAAE2858DF95000DDC23 /* NetworkManager.swift */,
+				1F4CCDBD285B5CC5008C31AB /* TableViewCell.swift */,
 			);
 			path = "The Rick and Morty API";
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				1F7EEAAD2858CA2B000DDC23 /* CharacterViewController.swift in Sources */,
 				1F7EEA9728562526000DDC23 /* SceneDelegate.swift in Sources */,
 				1F7EEAA9285628D3000DDC23 /* CharactersTableViewController.swift in Sources */,
+				1F4CCDBE285B5CC6008C31AB /* TableViewCell.swift in Sources */,
 				1F7EEAAB28562D1D000DDC23 /* RickAndMorty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

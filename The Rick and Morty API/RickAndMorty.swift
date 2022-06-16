@@ -32,11 +32,11 @@ struct Character: Decodable {
     
     var description: String {
         """
-    Name:     \(name)
-    Status:   \(status)
-    Species:  \(species)
-    Gender:   \(gender)
-    Origin:   \(origin.name)
+    Name: \(name)
+    Status: \(status)
+    Species: \(species)
+    Gender: \(gender)
+    Origin: \(origin.name)
     Location: \(location.name)
     """
     }

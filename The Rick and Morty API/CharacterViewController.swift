@@ -17,7 +17,13 @@ class CharacterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        NetworkManager.shared.fetchImage(from: character.image) { imageData in
+            self.characterImageView.image = UIImage(data: imageData)
+        }
         descriptionLabel.text = character.description
+        title = character.name
+
 
     }
     
