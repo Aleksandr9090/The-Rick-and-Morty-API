@@ -7,8 +7,13 @@
 
 import Foundation
 
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
+
 class NetworkManager {
-    
     static let shared = NetworkManager()
     
     private init () {}
@@ -43,7 +48,17 @@ class NetworkManager {
         }
     }
     
-    
+    func fetchImageForCache(from url: URL, completion: @escaping(Result<Data, NetworkError>) -> Void) {
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            DispatchQueue.main.async {
+                completion(.success(data))
+            }
+        }.resume()
+    }
 }
 
 

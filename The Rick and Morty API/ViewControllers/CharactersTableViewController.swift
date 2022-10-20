@@ -14,9 +14,8 @@ class CharactersViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image = UIImage(named: "Pickle")
-        let imageView = UIImageView(image: image)
-        tableView.backgroundView = imageView
+        setupNavigationBar()
+        tableView.backgroundView = UIImageView(image: UIImage(named: "Pickle"))
         
         fetchData(from: Link.rickAndMortyApi.rawValue)
     }
@@ -35,8 +34,8 @@ class CharactersViewController: UITableViewController {
         return cell
     }
     
-     
     // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let characterVC = segue.destination as? CharacterViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
@@ -49,7 +48,6 @@ class CharactersViewController: UITableViewController {
         : fetchData(from: rickAndMorty?.info.prev)
     }
     
-    
     private func fetchData(from url: String?) {
         NetworkManager.shared.fetchData(from: url) { rickAndMorty in
             self.rickAndMorty = rickAndMorty
@@ -57,10 +55,19 @@ class CharactersViewController: UITableViewController {
         }
     }
     
+    private func setupNavigationBar() {
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = UIColor(
+            red: 98/255,
+            green: 148/255,
+            blue: 49/255,
+            alpha: 230/255
+        )
+        navigationController?.navigationBar.standardAppearance = navBarAppearance
+    }
 }
-
-
-
 
 extension CharactersViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

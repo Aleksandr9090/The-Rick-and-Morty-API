@@ -36,10 +36,10 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BG6-do-c1c">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BG6-do-c1c">
                                             <rect key="frame" x="108" y="19" width="278" height="42"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -69,11 +69,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Rick and Morty" id="uGZ-L2-IVM">
                         <barButtonItem key="leftBarButtonItem" title="Prev" id="HTf-g0-bye">
+                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="updateData:" destination="m0y-ab-vPw" id="0fB-OI-Tn5"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" tag="1" title="Next" id="6Kq-lr-3z7">
+                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="updateData:" destination="m0y-ab-vPw" id="GXs-2n-IPi"/>
                             </connections>
@@ -107,7 +109,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PRm-yP-Tgr"/>
-                        <color key="backgroundColor" red="0.85295403863965857" green="0.66527036209568513" blue="0.41597575071442883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.42673131819999999" green="0.5737413764" blue="0.25482982399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="iec-lX-qAV" firstAttribute="top" secondItem="PRm-yP-Tgr" secondAttribute="top" constant="20" id="bne-nl-8gK"/>
                             <constraint firstItem="iec-lX-qAV" firstAttribute="leading" secondItem="PRm-yP-Tgr" secondAttribute="leading" constant="20" id="rzg-0c-U4t"/>
@@ -144,6 +146,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
